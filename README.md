@@ -63,17 +63,21 @@ QINCHUAN_CASE_STUDY/
 ```bash
 conda create -n qinchuan_env python=3.10
 conda activate qinchuan_env
-
-# 安装基础依赖
-pip install -r requirements.txt
 ```
 
 **⚠️ 重点提示：SAM2 的独立安装**
 由于 SAM2 需要编译部分 CUDA 算子，请进入 `sam2_repo` 目录进行本地安装：
 ```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+git clone https://github.com/facebookresearch/sam2.git（或直接下载https://github.com/facebookresearch/sam2）
 cd sam2_repo
 pip install -e .
 cd ..
+```
+
+**再安装基础依赖：**
+```bash
+pip install -r requirements.txt
 ```
 
 ---
